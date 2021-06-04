@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Weather App</h1>
+    <input id="cityInput" type="text"><button id="citySearchBtn">Search weather!</button>
+    <br><br>
+    <div id="cities">
+        <div>Tokyo</div>
+        <div>City!</div>
+        <div>City!</div>
+    </div>
+
+    <script id="cityweather-template" type="text/x-handlebars-template">
+        {{#each cities}}
+        <div class="city" >
+            {{#if isTemp}}
+            <button class="isTemp">+</button>
+            {{else}}
+            <button class="isTemp">-</button>
+            {{/if}}
+            <span>{{temperature}}</span>
+            <div class="cityName">{{name}}</div>
+            <div>{{condition}}</div>
+            <img src={{conditionPic}}>
+        </div>
+        {{/each}}
+    </script>
+
+    <script src="/jquery/dist/jquery.js"></script>
+    <script src="/handlebars/dist/handlebars.js"></script>
+    <script src="logic.js"></script>
+    <script src="renderer.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
