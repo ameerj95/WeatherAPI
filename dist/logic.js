@@ -1,9 +1,12 @@
 const SERVER_URL = "http://localhost:3001/"
-
+//-----------------------------------------------------------------------
 class WeatherApp {
+    //-----------------------------------------------------------------------
     constructor() {
         this.cityData = []
     }
+    //-----------------------------------------------------------------------
+    //gets data from server
     async getDataFromDB() {
         return $.ajax({
             method: "GET",
@@ -13,6 +16,8 @@ class WeatherApp {
             },
         })
     }
+    //-----------------------------------------------------------------------
+    //gets city's data from server
     async getCityData(city) {
         return $.ajax({
             method: "GET",
@@ -22,6 +27,12 @@ class WeatherApp {
             },
         })
     }
+    //-----------------------------------------------------------------------
+    //saves city in our DB 
+    //*NOTE: this could have been done differently with async where we can
+    // save it and then re-ask from data in DB , however in this scenario
+    // we would like to save time and render it immeiditly manually (change button)
+    // rather than re-rendering the view.
     saveCity(city) {
         $.ajax({
             method: "POST",
@@ -32,6 +43,8 @@ class WeatherApp {
             },
         })
     }
+    //-----------------------------------------------------------------------
+    //removes city from our DB
     async removeCity(city) {
         return $.ajax({
             method: "DELETE",
@@ -42,6 +55,8 @@ class WeatherApp {
             },
         })
     }
+    //-----------------------------------------------------------------------
+    //delete city from temp array in our client
     DeletedCityInCityData(city) {
         for (var i in this.cityData) {
             if (this.cityData[i].name == city) {
@@ -49,6 +64,8 @@ class WeatherApp {
             }
         }
     }
+    //-----------------------------------------------------------------------
+    //toggle our cities "awarness" of it being in DB or not
     ToggleCityInCityData(city) {
         for (var i in this.cityData) {
             if (this.cityData[i].name == city) {

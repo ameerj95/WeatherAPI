@@ -4,16 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
     <title>Document</title>
 </head>
 <body>
-    <h1>Weather App</h1>
+    <div class="title">Weather App</div>
     <input id="cityInput" type="text"><button id="citySearchBtn">Search weather!</button>
     <br><br>
     <div id="cities">
-        <div>Tokyo</div>
-        <div>City!</div>
-        <div>City!</div>
     </div>
 
     <script id="cityweather-template" type="text/x-handlebars-template">
@@ -24,10 +22,10 @@
             {{else}}
             <button class="isTemp">-</button>
             {{/if}}
-            <span>{{temperature}}</span>
+            <div class="temp">{{temperature}} C</div>
             <div class="cityName">{{name}}</div>
-            <div>{{condition}}</div>
-            <img src={{conditionPic}}>
+            <div class="condition">{{condition}}</div>
+            <img class="icon" src={{conditionPic}}>
         </div>
         {{/each}}
     </script>

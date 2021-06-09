@@ -1,0 +1,67 @@
+.city{
+    background-color: rgba(233, 233, 233, 0.521);
+    display: grid;
+    width:50%;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 3fr 3fr 3fr;
+    grid-template-areas: 
+    "b cn t ct i";
+    position: relative;
+    font-family: 'Kalam', cursive;
+    font-size:20px;
+    margin: 20px;
+    padding: 20px;
+    color:white;
+    grid-gap: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+body{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    /*background-image: url('background.jpeg');*/
+    background-image: url('KV2j.gif');
+    background-size: cover;
+}
+button{
+    grid-area:b;
+    color:white;
+    background-color: rgb(125, 155, 255);
+    
+}
+.temp{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area:t;
+}
+.cityName{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area:cn;
+}
+.condition{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area:ct;
+}
+.icon{
+    border: white solid 1px;
+    border-radius: 60%;
+    grid-area:i;
+}
+.title{
+    font-size: 48px;
+    color: white;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin: 20px;
+}
+input{
+    width: 30%;
+    height: 30px;
+}
+#citySearchBtn{
+    height: 40px;
+}
